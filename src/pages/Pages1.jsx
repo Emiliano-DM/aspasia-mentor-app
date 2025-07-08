@@ -106,7 +106,7 @@ function Pages1() {
             <div className="grupo-foto">
               <img src={mentor.foto} alt={mentor.nombre} style={{width:'100px', borderRadius:'50%'}} />
             </div>
-            <div style={{display:'flex', flexDirection: 'column' }}>
+            <div style={{display:'flex', flexDirection: 'column',alignItems: 'center', justifyContent: 'center', gap:10 }}>
               <h3>{mentor.nombre}</h3>
               <p>{mentor.empresa}</p>
             </div>
@@ -124,12 +124,14 @@ function Pages1() {
         Selecciona 3 grupos y asignales un número del 1 al 3 según tus preferencias en los recuadros. ¡Tú eliges el orden!
       </p>
       {db.equipos.map((equipo) => (
-        <div key={equipo.id} className="grupo-card card-mentor">
+        <div key={equipo.id} className="grupo-card card-mentor" style={{display:'flex',justifyContent:'space-between'}}>
           <div style={{display:'flex', flexDirection: 'column' }}> 
             <h3>{equipo.nombre}</h3>
-          <p>{equipo.descripcion}</p>
-          </div> 
+            <p>{equipo.descripcion}</p>
+          </div>
+          <div>
           <label>{renderInput(equipo.id)}</label>
+          </div>
         </div>
       ))}
 
