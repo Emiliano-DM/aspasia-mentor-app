@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useState } from 'react';
 import { db } from '../services/db';
 import '../styles/Grupos.css'
 
-function Pages1() {
-    const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
+function Mentor() {
+  const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
   const [seleccion, setSeleccion] = useState([]);
   const [error, setError] = useState('');
   const [mostrarPopup, setMostrarPopup] = useState(false);
@@ -39,34 +40,34 @@ function Pages1() {
   // };
 
   const confirmarEnvio = async () => {
-  const preferenciasOrdenadas = seleccion
-    .filter((s) => s.valor > 0)
-    .sort((a, b) => a.valor - b.valor)
-    .map((s) => s.id); // IDs ordenados según preferencia
+    const preferenciasOrdenadas = seleccion
+      .filter((s) => s.valor > 0)
+      .sort((a, b) => a.valor - b.valor)
+      .map((s) => s.id); // IDs ordenados según preferencia
 
-  try {
-    const response = await fetch(`https://idea-de-txabi.onrender.com/api/mentores/${usuarioSeleccionado.id}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(preferenciasOrdenadas),
-    });
+    try {
+      const response = await fetch(`https://idea-de-txabi.onrender.com/api/mentores/${usuarioSeleccionado.id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(preferenciasOrdenadas),
+      });
 
-    if (!response.ok) {
-      throw new Error('Error al enviar la votación');
+      if (!response.ok) {
+        throw new Error('Error al enviar la votación');
+      }
+
+      const data = await response.json();
+      console.log('Respuesta del backend:', data);
+
+      setMostrarPopup(false);
+      alert('Votación enviada con éxito');
+    } catch (error) {
+      console.error('Error al enviar:', error);
+      alert('Hubo un error al enviar la votación');
     }
-
-    const data = await response.json();
-    console.log('Respuesta del backend:', data);
-
-    setMostrarPopup(false);
-    alert('Votación enviada con éxito');
-  } catch (error) {
-    console.error('Error al enviar:', error);
-    alert('Hubo un error al enviar la votación');
-  }
-};
+  };
 
   const getValorSeleccionado = (id) => {
     const item = seleccion.find((i) => i.id === id);
@@ -104,9 +105,9 @@ function Pages1() {
             onClick={() => setUsuarioSeleccionado(mentor)}
           >
             <div className="grupo-foto">
-              <img src={mentor.foto} alt={mentor.nombre} style={{width:'100px', borderRadius:'50%'}} />
+              <img src={mentor.foto} alt={mentor.nombre} style={{ width: '100px', borderRadius: '50%' }} />
             </div>
-            <div style={{display:'flex', flexDirection: 'column',alignItems: 'center', justifyContent: 'center', gap:10 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
               <h3>{mentor.nombre}</h3>
               <p>{mentor.empresa}</p>
             </div>
@@ -124,13 +125,13 @@ function Pages1() {
         Selecciona 3 grupos y asignales un número del 1 al 3 según tus preferencias en los recuadros. ¡Tú eliges el orden!
       </p>
       {db.equipos.map((equipo) => (
-        <div key={equipo.id} className="grupo-card card-mentor" style={{display:'flex',justifyContent:'space-between'}}>
-          <div style={{display:'flex', flexDirection: 'column' }}> 
+        <div key={equipo.id} className="grupo-card card-mentor" style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             <h3>{equipo.nombre}</h3>
             <p>{equipo.descripcion}</p>
           </div>
           <div>
-          <label>{renderInput(equipo.id)}</label>
+            <label>{renderInput(equipo.id)}</label>
           </div>
         </div>
       ))}
@@ -181,5 +182,4 @@ function Pages1() {
 
 }
 
-export default Pages1;
-
+export default Mentor
