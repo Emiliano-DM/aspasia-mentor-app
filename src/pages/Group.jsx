@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useState } from 'react';
 import { db } from '../services/db';
-import '../styles/Grupos.css'
 
-
-function Pages2() {
-const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
+function Group() {
+  const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
   const [seleccion, setSeleccion] = useState([]);
   const [error, setError] = useState('');
   const [mostrarPopup, setMostrarPopup] = useState(false);
@@ -40,34 +39,34 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
   // };
 
   const confirmarEnvio = async () => {
-  const preferenciasOrdenadas = seleccion
-    .filter((s) => s.valor > 0)
-    .sort((a, b) => a.valor - b.valor)
-    .map((s) => s.id); // IDs ordenados según preferencia
+    const preferenciasOrdenadas = seleccion
+      .filter((s) => s.valor > 0)
+      .sort((a, b) => a.valor - b.valor)
+      .map((s) => s.id); // IDs ordenados según preferencia
 
-  try {
-    const response = await fetch(`https://idea-de-txabi.onrender.com/api/equipos/${usuarioSeleccionado.id}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(preferenciasOrdenadas),
-    });
+    try {
+      const response = await fetch(`https://idea-de-txabi.onrender.com/api/equipos/${usuarioSeleccionado.id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(preferenciasOrdenadas),
+      });
 
-    if (!response.ok) {
-      throw new Error('Error al enviar la votación');
+      if (!response.ok) {
+        throw new Error('Error al enviar la votación');
+      }
+
+      const data = await response.json();
+      console.log('Respuesta del backend:', data);
+
+      setMostrarPopup(false);
+      alert('Votación enviada con éxito');
+    } catch (error) {
+      console.error('Error al enviar:', error);
+      alert('Hubo un error al enviar la votación');
     }
-
-    const data = await response.json();
-    console.log('Respuesta del backend:', data);
-
-    setMostrarPopup(false);
-    alert('Votación enviada con éxito');
-  } catch (error) {
-    console.error('Error al enviar:', error);
-    alert('Hubo un error al enviar la votación');
-  }
-};
+  };
 
 
   const getValorSeleccionado = (id) => {
@@ -104,7 +103,7 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
             key={equipo.id}
             className={`grupo-card card-grupo ${usuarioSeleccionado?.id === equipo.id ? 'seleccionado' : ''}`}
             onClick={() => setUsuarioSeleccionado(equipo)}
-            style={{display:'flex', flexDirection: 'column',alignItems: 'center', justifyContent: 'center', gap:10 }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10 }}
           >
             <h3>{equipo.nombre}</h3>
             <p>{equipo.descripcion}</p>
@@ -122,13 +121,13 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
         Selecciona 3 mentores y asignales un número del 1 al 3 según tus preferencias en los recuadros. ¡Tú eliges el orden!
       </p>
       {db.mentores.map((mentor) => (
-        <div key={mentor.id} className="grupo-card card-grupo" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        <div key={mentor.id} className="grupo-card card-grupo" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="grupo-foto">
-            <img src={mentor.foto} alt={mentor.nombre} style={{width:'100px', borderRadius:'50%'}} />
+            <img src={mentor.foto} alt={mentor.nombre} style={{ width: '100px', borderRadius: '50%' }} />
           </div>
-          <div style={{display:'flex', flexDirection: 'column',alignItems: 'center', justifyContent: 'center', }}>
-          <h3>{mentor.nombre}</h3>
-          <p>{mentor.empresa}</p>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', }}>
+            <h3>{mentor.nombre}</h3>
+            <p>{mentor.empresa}</p>
           </div>
           <label>{renderInput(mentor.id)}</label>
         </div>
@@ -179,4 +178,5 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
   );
 }
 
-export default Pages2;
+
+export default Group
