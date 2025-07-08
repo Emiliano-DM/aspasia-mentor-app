@@ -13,8 +13,6 @@ function App() {
         <Header />
         <main>
           <Navegation />
-          <Results />
-          <Link href="/result">.</Link>
         </main>
         <Footer />
       </div>
