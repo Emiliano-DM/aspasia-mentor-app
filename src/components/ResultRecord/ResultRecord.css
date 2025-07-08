@@ -1,0 +1,32 @@
+#result-record-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #FEF3C8;
+  border: 2px solid #E49F0C;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.mentor-info{
+  background-color: #999EB8;
+  color: #0E132A;
+}
+
+.group-info{
+  background-color: #FBBF3D;
+  color: #E49F0C;
+}
+
+.mentor-info, .group-info {
+  padding: 20px;
+  border-radius: 8px;
+  
+  font-family: 'Arial', sans-serif;
+}
+
+.mentor-info p, .group-info p {
+  font-size: 30px;
+}
