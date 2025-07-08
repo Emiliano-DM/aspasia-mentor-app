@@ -1,0 +1,42 @@
+#record-details{
+  background-color: #FEF3C8;
+  padding: 10px 0px 10px 50px; 
+  border-radius: 0px 0px 8px 8px;
+  width: 99.5%;
+  
+  margin-bottom: 10px;
+}
+
+#record-details h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.mg-b-10 {
+  margin-bottom: 10px;
+}
+
+#record-details p {
+  font-size: 18px;
+  color: #0E132A;
+  font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+  #record-details {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+    width: 100%;
+    /* Ensure full width on mobile */
+  }
+
+  #record-details h3 {
+    font-size: 20px;
+    /* Slightly smaller font size for headings */
+  }
+
+  #record-details p {
+    font-size: 16px;
+    /* Adjust font size for readability */
+  }
+}

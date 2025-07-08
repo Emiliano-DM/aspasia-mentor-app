@@ -7,26 +7,43 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   justify-content: space-around;
-  margin-bottom: 10px;
+  width: 100%;
 }
 
-.mentor-info{
-  background-color: #999EB8;
-  color: #0E132A;
-}
-
-.group-info{
-  background-color: #FBBF3D;
-  color: #E49F0C;
-}
-
-.mentor-info, .group-info {
+.mentor-info,
+.group-info {
+  width: 700px;
+  /* Ensures equal size for both boxes */
   padding: 20px;
   border-radius: 8px;
-  
+  background-color: #999EB8;
+  /* Default background color */
+  color: #0E132A;
+  /* Default text color */
   font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  /* Matches the font size of #results p */
+  box-sizing: border-box;
 }
 
-.mentor-info p, .group-info p {
-  font-size: 30px;
+.group-info {
+  background-color: #FBBF3D;
+  color: #0c0a006b;
+}
+
+.mentor-info p,
+.group-info p {
+  font-size: inherit;
+  /* Inherits the font size from the parent element */
+}
+
+@media (max-width: 768px) {
+
+  .mentor-info,
+  .group-info {
+    width: 250px;
+    /* Full width on smaller screens */
+    font-size: 18px;
+    /* Adjust font size for readability */
+  }
 }

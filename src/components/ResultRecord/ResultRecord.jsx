@@ -11,7 +11,7 @@ function ResultRecord({ data, onClick }) {
         <p>{mentors.empresa}</p>
       </div>
       <div className="group-info">
-        <p>Group: {teams.nombre}</p>
+        <p>{teams.nombre}</p>
       </div>
     </div>
   );

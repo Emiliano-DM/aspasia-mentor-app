@@ -3,6 +3,7 @@ import ResultRecord from "../../components/ResultRecord/ResultRecord.jsx";
 import { fetchData } from "../../services/api.js"; // Adjust the import path as necessary
 import { resultContext } from "../../provider/resultProvider.jsx";
 import RecordDetails from "../../components/RecordDetails/RecordDetails.jsx";
+import "./Results.css"
 
 function Results() {
   const [teams, setTeams] = useState();
@@ -30,7 +31,7 @@ function Results() {
   }
 
   return (
-    <div>
+    <div id="results">
       <h1>Resultados</h1>
       <p>
         Estos son los resultados que han salido en las votaciones segùn el

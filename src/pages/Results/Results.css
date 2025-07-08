@@ -1,0 +1,28 @@
+#results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Changed from height to min-height */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#results h1 {
+  font-size: 48px;
+  color: #222D65;
+  text-align: center;
+}
+
+#results>p{
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  #results h1 {
+    font-size: 32px;
+  }
+}
