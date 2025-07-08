@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api";
+const API = "https://idea-de-txabi.onrender.com/api";
 
 export async function fetchData(endpoint) {
   const response = await fetch(`${API}/${endpoint}`);
