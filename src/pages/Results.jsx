@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useState } from "react";
-import ResultRecord from "../../components/ResultRecord/ResultRecord.jsx";
-import { fetchData } from "../../services/api.js"; // Adjust the import path as necessary
-import { resultContext } from "../../provider/resultProvider.jsx";
-import RecordDetails from "../../components/RecordDetails/RecordDetails.jsx";
+import ResultRecord from "../components/ResultRecord/ResultRecord.jsx";
+import { fetchData } from "../services/api.js"; // Adjust the import path as necessary
+import { resultContext } from "../provider/resultProvider.jsx";
+import RecordDetails from "../components/RecordDetails/RecordDetails.jsx";
 
 function Results() {
   const [teams, setTeams] = useState();
@@ -51,9 +51,9 @@ function Results() {
                 teams: teams[index],
                 mentors:
                   mentors[
-                    Number(
-                      results.matchings.matching1[convertedId].slice(-1)[0]
-                    ) - 1
+                  Number(
+                    results.matchings.matching1[convertedId].slice(-1)[0]
+                  ) - 1
                   ],
               }}
             ></ResultRecord>
