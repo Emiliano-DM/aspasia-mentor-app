@@ -104,6 +104,7 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
             key={equipo.id}
             className={`grupo-card card-grupo ${usuarioSeleccionado?.id === equipo.id ? 'seleccionado' : ''}`}
             onClick={() => setUsuarioSeleccionado(equipo)}
+            style={{display:'flex', flexDirection: 'column',alignItems: 'center', justifyContent: 'center', gap:10 }}
           >
             <h3>{equipo.nombre}</h3>
             <p>{equipo.descripcion}</p>
@@ -121,11 +122,11 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
         Selecciona 3 mentores y asignales un número del 1 al 3 según tus preferencias en los recuadros. ¡Tú eliges el orden!
       </p>
       {db.mentores.map((mentor) => (
-        <div key={mentor.id} className="grupo-card card-grupo">
+        <div key={mentor.id} className="grupo-card card-grupo" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
           <div className="grupo-foto">
             <img src={mentor.foto} alt={mentor.nombre} style={{width:'100px', borderRadius:'50%'}} />
           </div>
-          <div style={{display:'flex', flexDirection: 'column' }}>
+          <div style={{display:'flex', flexDirection: 'column',alignItems: 'center', justifyContent: 'center', }}>
           <h3>{mentor.nombre}</h3>
           <p>{mentor.empresa}</p>
           </div>

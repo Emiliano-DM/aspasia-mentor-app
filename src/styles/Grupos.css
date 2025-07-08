@@ -205,13 +205,13 @@ body {
   transform: scale(1.03);
 }
 
-.grupo-foto {
+/* .grupo-foto {
   width: 120px;
   height: 120px;
-  /* overflow: hidden; */
+  
   border-radius: 50%;
   margin-bottom: 10px;
-}
+/* } */ */
 
 .btn-cancelar {
   background-color: #babecf;
