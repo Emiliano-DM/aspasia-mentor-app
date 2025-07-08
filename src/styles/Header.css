@@ -8,6 +8,7 @@
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
+  width:100% ;
 }
 
 /* Contenedor del header */
@@ -15,7 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+    width: 100%;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 0 20px;
 }

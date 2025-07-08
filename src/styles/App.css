@@ -8,10 +8,10 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f7f7f7;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
   color: #333;
   /* Mejor contraste */

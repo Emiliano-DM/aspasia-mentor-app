@@ -123,10 +123,12 @@ const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
       {db.mentores.map((mentor) => (
         <div key={mentor.id} className="grupo-card card-grupo">
           <div className="grupo-foto">
-            <img src={mentor.foto} alt={mentor.nombre} />
+            <img src={mentor.foto} alt={mentor.nombre} style={{width:'100px', borderRadius:'50%'}} />
           </div>
+          <div style={{display:'flex', flexDirection: 'column' }}>
           <h3>{mentor.nombre}</h3>
           <p>{mentor.empresa}</p>
+          </div>
           <label>{renderInput(mentor.id)}</label>
         </div>
       ))}

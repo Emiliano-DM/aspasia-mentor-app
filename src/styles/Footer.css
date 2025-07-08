@@ -2,7 +2,7 @@
 .footer {
   background-color: #333;
   color: white;
-  padding: 20px 0;
+  padding: 20px 0; 
   text-align: center;
   position: relative;
   bottom: 0;
@@ -12,7 +12,7 @@
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 
 .footer-info p {
@@ -25,7 +25,7 @@
   margin: 20px 0;
 }
 
-.footer-socials a {
+/* .footer-socials a {
   color: white;
   font-size: 24px;
   margin: 0 10px;
@@ -51,7 +51,7 @@
 
 .footer-links a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Estilos para los iconos sociales, usando FontAwesome */
 .fab {

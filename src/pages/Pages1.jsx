@@ -104,10 +104,12 @@ function Pages1() {
             onClick={() => setUsuarioSeleccionado(mentor)}
           >
             <div className="grupo-foto">
-              <img src={mentor.foto} alt={mentor.nombre} />
+              <img src={mentor.foto} alt={mentor.nombre} style={{width:'100px', borderRadius:'50%'}} />
             </div>
-            <h3>{mentor.nombre}</h3>
-            <p>{mentor.empresa}</p>
+            <div style={{display:'flex', flexDirection: 'column' }}>
+              <h3>{mentor.nombre}</h3>
+              <p>{mentor.empresa}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -123,11 +125,11 @@ function Pages1() {
       </p>
       {db.equipos.map((equipo) => (
         <div key={equipo.id} className="grupo-card card-mentor">
-          <div style={{display:'flex'}}> 
+          <div style={{display:'flex', flexDirection: 'column' }}> 
             <h3>{equipo.nombre}</h3>
           <p>{equipo.descripcion}</p>
+          </div> 
           <label>{renderInput(equipo.id)}</label>
-          </div>
         </div>
       ))}
 
