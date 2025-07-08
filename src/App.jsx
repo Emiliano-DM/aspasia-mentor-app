@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Navegation from './routing/Navegation';
 import Results from './pages/Results';
 import { ResultProvider } from './provider/resultProvider';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <main>
           <Navegation />
           <Results />
+          <Link href="/result">.</Link>
         </main>
         <Footer />
       </div>

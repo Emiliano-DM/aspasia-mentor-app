@@ -63,6 +63,7 @@ function Mentor() {
 
       setMostrarPopup(false);
       alert('Votación enviada con éxito');
+
     } catch (error) {
       console.error('Error al enviar:', error);
       alert('Hubo un error al enviar la votación');
