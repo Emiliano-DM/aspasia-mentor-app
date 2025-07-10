@@ -26,8 +26,6 @@ const Home = () => {
           className="boton-amarillo"
         />
       </div>
-      <Link to="/result">.asdvasd</Link>
-
     </div>
   );
 };
