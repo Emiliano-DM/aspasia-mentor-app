@@ -74,7 +74,7 @@ body {
   display: flex;
   gap: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   transition: transform 0.2s ease;
   cursor: pointer;
 }
@@ -192,12 +192,14 @@ body {
   background-color: #222d66;
   border: 2px solid #999eb8;
   color: #F0F0F0;
+  max-width: 700px;
 }
 
 .card-grupo {
   color: #694a05;
   background-color: #fbbf3d;
   border: 2px solid #e7a312;
+  max-width: 700px;
 }
 
 .seleccionado {
@@ -205,13 +207,6 @@ body {
   transform: scale(1.03);
 }
 
-/* .grupo-foto {
-  width: 120px;
-  height: 120px;
-  
-  border-radius: 50%;
-  margin-bottom: 10px;
-/* } */ */
 
 .btn-cancelar {
   background-color: #babecf;
@@ -227,28 +222,6 @@ body {
   cursor: not-allowed;
 }
 
-input[type="number"] {
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
-  text-align: center;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  margin-top: 8px;
-  transition: border-color 0.2s ease;
-}
-
-input[type="number"]:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-input[type="number"]:disabled {
-  background-color: #eee;
-  cursor: not-allowed;
-  border-color: #999;
-}
-
 .titulo-azul {
   color: #222d66;
   font-size: 2.5rem;
@@ -259,4 +232,29 @@ input[type="number"]:disabled {
   color: #ffc107;
   font-size: 2.5rem;
   margin-bottom: 15px;
+}
+
+.titulo-card{
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card-general{
+  display: 'flex';
+  flex-direction: column;
+  justify-content:'space-between';
+  align-items:'center';
+  width: 200px;
+}
+
+.espaciado{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  
+}
+
+.mentor-espaciado{
+  display: flex;
+  justify-content: space-around;
 }

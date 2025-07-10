@@ -3,7 +3,7 @@ export const db= {
   "equipos": [
     {
       "id": 1,
-      "nombre": "Vetrams + Sugar Paws",
+      "nombre": "PetSalut",
       "descripcion": "Animales y veterinarios",
       "mentores": [],
       "technologies": ["React Native", "Firebase"],
@@ -12,7 +12,7 @@ export const db= {
     },
     {
       "id": 2,
-      "nombre": "Stylo + Evora",
+      "nombre": "Erova",
       "descripcion": "Ropa y moda",
       "mentores": [],
       "technologies": ["React Native", "Firebase"],
