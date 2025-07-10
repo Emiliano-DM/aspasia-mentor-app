@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useState } from 'react';
 import { db } from '../services/db';
 import '../styles/Grupos.css';
 
-function Pages2() {
+
+function Group() {
   const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
   const [seleccion, setSeleccion] = useState([]);
   const [error, setError] = useState('');
@@ -178,4 +180,5 @@ function Pages2() {
   );
 }
 
-export default Pages2;
+
+export default Group

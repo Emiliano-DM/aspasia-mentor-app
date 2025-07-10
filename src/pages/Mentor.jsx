@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useState } from 'react';
 import { db } from '../services/db';
 import '../styles/Grupos.css';
 
-function Pages1() {
+function Mentor() {
   const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
   const [seleccion, setSeleccion] = useState([]);
   const [error, setError] = useState('');
@@ -174,5 +175,4 @@ function Pages1() {
   );
 }
 
-export default Pages1;
-
+export default Mentor

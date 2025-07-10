@@ -1,11 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Button from '../components/Button'; 
+import { useNavigate, Link } from 'react-router-dom';
+import Button from '../components/Button';
 import '../styles/Grupos.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -26,6 +26,8 @@ const Home = () => {
           className="boton-amarillo"
         />
       </div>
+      <Link to="/result">.asdvasd</Link>
+
     </div>
   );
 };
