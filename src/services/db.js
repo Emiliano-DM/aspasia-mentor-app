@@ -3,7 +3,7 @@ export const db= {
   "equipos": [
     {
       "id": 1,
-      "nombre": "Vetrams + Sugar Paws",
+      "nombre": "PetSalut",
       "descripcion": "Animales y veterinarios",
       "mentores": [],
       "technologies": ["React Native", "Firebase"],
@@ -12,7 +12,7 @@ export const db= {
     },
     {
       "id": 2,
-      "nombre": "Stylo + Evora",
+      "nombre": "Erova",
       "descripcion": "Ropa y moda",
       "mentores": [],
       "technologies": ["React Native", "Firebase"],
@@ -53,7 +53,7 @@ export const db= {
       "id": 2,
       "nombre": "Tian",
       "empresa": "Scopely",
-      "foto": "/img/tian.jpg",
+      "foto": "/img/Tian.jpg",
       "equipos": [],
       "technologies": ["Figma"],
       "skills": ["UX/UI", "UX research", "prototipado", "gamificación", "gestión de proyectos"],
@@ -73,7 +73,7 @@ export const db= {
       "id": 4,
       "nombre": "Toni y Joan",
       "empresa": "Margot",
-      "foto": "/img/toni_joan.jpg",
+      "foto": "/img/mentores.png",
       "equipos": [],
       "technologies": [],
       "skills": ["estrategia creativa", "brand building", "innovación", "gestión de proyectos", "conceptualización", "dirección creativa"],

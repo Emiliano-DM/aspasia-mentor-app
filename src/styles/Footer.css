@@ -1,0 +1,59 @@
+/* Estilos generales del footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0; 
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 0 20px; */
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer-socials {
+  margin: 20px 0;
+}
+
+/* .footer-socials a {
+  color: white;
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #4CAF50;
+}
+
+/* Enlaces de footer */
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+} */
+
+/* Estilos para los iconos sociales, usando FontAwesome */
+.fab {
+  font-size: 30px;
+}

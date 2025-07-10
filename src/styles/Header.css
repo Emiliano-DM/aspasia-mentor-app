@@ -1,0 +1,117 @@
+/* Estilos generales del header */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  width:100% ;
+}
+
+/* Contenedor del header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  /* Redondeo de bordes */
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  font-size: 18px;
+  margin-left: 30px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0056b3;
+}
+
+/* Menú móvil (por defecto oculto) */
+.mobile-menu {
+  display: none;
+}
+
+/* Estilos para el menú de navegación en dispositivos móviles */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    /* Escondemos la barra de navegación normal */
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  /* Estilo del botón de menú */
+  .menu-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+  }
+
+  .menu-icon {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    display: none;
+  }
+
+  .mobile-nav.active {
+    display: block;
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .mobile-nav a:hover {
+    background-color: #4CAF50;
+  }
+}
