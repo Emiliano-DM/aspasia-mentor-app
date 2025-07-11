@@ -45,7 +45,8 @@ function Group() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(preferenciasOrdenadas),
+        //body: JSON.stringify(preferenciasOrdenadas),
+        body: JSON.stringify({ preferencias: preferenciasOrdenadas })
       });
 
       if (!response.ok) {
@@ -119,6 +120,7 @@ function Group() {
   return (
     <div className="grupos-container">
       <h2 className="titulo-amarillo">¡A votar!</h2>
+      <h2 className='usuarioSeleccionado'>{usuarioSeleccionado.nombre}</h2>
       <p className="subtexto-rol">
       ¡Es tu turno de elegir! Vota entre el 1 y el 4, siendo el 1 el más favorito.
       </p>
