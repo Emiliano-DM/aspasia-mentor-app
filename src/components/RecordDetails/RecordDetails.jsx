@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { resultContext } from "../../provider/resultProvider.jsx";
+import "./RecordDetails.css";
 
 function RecordDetails({ data, isVisible }) {
   //filter and obtain an object. get other parameter on screen
@@ -24,20 +25,24 @@ function RecordDetails({ data, isVisible }) {
     })
     .sort((a, b) => b.adequacyScore - a.adequacyScore);
 
-  return !isVisible ? null : (
-    <div>
+  return !isVisible ? (
+    <div className="mg-b-10"></div>
+  ) : (
+    <div id="record-details">
       {mentorTeamVM.length > 0 && (
         <div>
           {mentorTeamVM.map((team, index) => {
             return (
               <div key={index} id="record-details-container">
                 <h3>
-                  Details for Team {team.teamId} and Mentor {id + 1}
+                  Detalles para equipo {teamId.slice(-1)[0]} y mentor {id + 1}
                 </h3>
-                <p>adequacyScore: {team.adequacyScore}</p>
-                <p>totalScore: {team.totalScore}</p>
-                <p>voteEmitted: {team.voteEmitted}</p>
-                <p>voteReceived: {team.voteReceived}</p>
+                <p>
+                  Ptos mentor: {team.voteReceived} | Ptos equipo:{" "}
+                  {team.voteEmitted}
+                </p>
+                <p>Total: {team.totalScore}</p>
+                <p>Puntos de adecuacìon: {team.adequacyScore}</p>
               </div>
             );
           })}

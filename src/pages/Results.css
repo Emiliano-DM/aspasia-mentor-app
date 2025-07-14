@@ -1,0 +1,25 @@
+#results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 20px;
+  font-family: railways, sans-serif;
+}
+
+#results h1 {
+  font-size: 48px;
+  color: #222D65;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  #results h1 {
+    font-size: 32px;
+  }
+}

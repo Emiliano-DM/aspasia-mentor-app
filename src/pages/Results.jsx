@@ -1,14 +1,16 @@
 import React, { useEffect, useContext, useState } from "react";
-import ResultRecord from "../components/ResultRecord/ResultRecord.jsx";
-import { fetchData } from "../services/api.js"; // Adjust the import path as necessary
-import { resultContext } from "../provider/resultProvider.jsx";
-import RecordDetails from "../components/RecordDetails/RecordDetails.jsx";
+
+import ResultRecord from "../../components/ResultRecord/ResultRecord.jsx";
+import { fetchData } from "../../services/api.js"; // Adjust the import path as necessary
+import { resultContext } from "../../provider/resultProvider.jsx";
+import RecordDetails from "../../components/RecordDetails/RecordDetails.jsx";
+import "./Results.css";
+
 
 function Results() {
   const [teams, setTeams] = useState();
   const [mentors, setMentors] = useState();
   const { results, setResults } = useContext(resultContext);
-  const [isVisible, setIsVisible] = React.useState({});
 
   useEffect(() => {
     fetchAllData();
@@ -30,24 +32,15 @@ function Results() {
   }
 
   return (
-    <div>
-      <h1>Resultados</h1>
-      <p>
-        Estos son los resultados que han salido en las votaciones segùn el
-        ranking
-      </p>
+    <div id="results">
+      <h1>Resultados de la votacìon</h1>
       {teams?.map((team, index) => {
         const convertedId = "team" + (index + 1);
         return (
           <div key={team.id}>
             <ResultRecord
-              onClick={() => {
-                setIsVisible((prev) => ({
-                  ...prev,
-                  [convertedId]: !prev[convertedId],
-                }));
-              }}
               data={{
+<<<<<<< HEAD:src/pages/Results.jsx
                 teams: teams[index],
                 mentors:
                   mentors[
@@ -62,12 +55,17 @@ function Results() {
                 teamId: convertedId,
                 mentorId: results.matchings.matching1[convertedId],
                 id:
+=======
+                teams: teams,
+                mentors: mentors,
+                mentorId:
+>>>>>>> emiliano:src/pages/Results/Results.jsx
                   Number(
                     results.matchings.matching1[convertedId].slice(-1)[0]
                   ) - 1,
+                teamId: index,
               }}
-              isVisible={!!isVisible[convertedId]}
-            ></RecordDetails>
+            ></ResultRecord>
           </div>
         );
       })}

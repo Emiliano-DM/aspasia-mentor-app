@@ -6,27 +6,64 @@
   border: 2px solid #E49F0C;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  justify-content: space-around;
-  margin-bottom: 10px;
+  justify-content: center;
+  min-width: 700px;
+  gap: 20px;
 }
 
-.mentor-info{
-  background-color: #999EB8;
-  color: #0E132A;
-}
-
-.group-info{
-  background-color: #FBBF3D;
-  color: #E49F0C;
-}
-
-.mentor-info, .group-info {
+.mentor-container,
+.group-container {
+  min-width: 300px;
+  /* Ensures equal size for both boxes */
   padding: 20px;
   border-radius: 8px;
-  
-  font-family: 'Arial', sans-serif;
+
+  /* Default text color */
+  /* Matches the font size of #results p */
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.mentor-info p, .group-info p {
-  font-size: 30px;
+.mentor-container{
+    background-color: #999EB8;
+  /* Default background color */
+  color: #0e132aad;
 }
+
+.group-container {
+  background-color: #FBBF3D;
+  color: #443a07be;
+  align-content: center;
+}
+
+.mentor-name, .team-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mentor-company {
+  margin: 0;
+}
+
+.option-text {
+  text-align: left;
+}
+
+.mentor-options >p , .team-options>p{
+  text-align: left;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .mentor-container,
+  .group-container {
+    width: 250px;
+    /* Full width on smaller screens */
+    font-size: 18px;
+    /* Adjust font size for readability */
+  }
+}
+
