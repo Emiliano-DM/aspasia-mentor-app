@@ -25,7 +25,9 @@ function RecordDetails({ data, isVisible }) {
     })
     .sort((a, b) => b.adequacyScore - a.adequacyScore);
 
-  return !isVisible ? <div className="mg-b-10"></div> : (
+  return !isVisible ? (
+    <div className="mg-b-10"></div>
+  ) : (
     <div id="record-details">
       {mentorTeamVM.length > 0 && (
         <div>
@@ -33,12 +35,14 @@ function RecordDetails({ data, isVisible }) {
             return (
               <div key={index} id="record-details-container">
                 <h3>
-                  Details for Team {team.teamId} and Mentor {id + 1}
+                  Detalles para equipo {teamId.slice(-1)[0]} y mentor {id + 1}
                 </h3>
-                <p>Adequacy Score: {team.adequacyScore}</p>
-                <p>Total Score: {team.totalScore}</p>
-                <p>Vote Emitted: {team.voteEmitted}</p>
-                <p>Vote Received: {team.voteReceived}</p>
+                <p>
+                  Ptos mentor: {team.voteReceived} | Ptos equipo:{" "}
+                  {team.voteEmitted}
+                </p>
+                <p>Total: {team.totalScore}</p>
+                <p>Puntos de adecuacìon: {team.adequacyScore}</p>
               </div>
             );
           })}

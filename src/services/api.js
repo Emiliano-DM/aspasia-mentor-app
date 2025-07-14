@@ -1,5 +1,7 @@
 const API = "https://idea-de-txabi.onrender.com/api";
 
+
+
 export async function fetchData(endpoint) {
   const response = await fetch(`${API}/${endpoint}`);
   if (!response.ok) {
