@@ -1,20 +1,20 @@
 import React from 'react';
 import '../styles/About.css'; // Asegúrate de tener este CSS
 
+
 const About = () => {
   const team = [
-    { name: 'MIGUEL GARCIA MELGAR', role: 'Full Stack Developer',  },
-    { name: 'CARLOS MARTINEZ GOMEZ', role: 'Full Stack Developer',  },
-    { name: 'EMILIANO DI MASCOLO', role: 'Full Stack Developer', },
-    { name: 'ARCHLY VOLCY', role: 'Full Stack Developer',  },
-    { name: 'JESSICA SIRUNO ', role: 'Diseñadora UX/UI',  },
-    { name: 'GISELA CARBALLO', role: 'Front-end Developer',},
+    { name: 'MIGUEL GARCIA MELGAR', role: 'Full Stack Developer',link:'https://www.linkedin.com/in/mikongame/'  },
+    { name: 'CARLOS MARTINEZ GOMEZ', role: 'Full Stack Developer', link:'https://www.linkedin.com/in/carlosmartgom/' },
+    { name: 'EMILIANO DI MASCOLO', role: 'Full Stack Developer', link:'https://www.linkedin.com/in/emiliano-dimascolo/'},
+    { name: 'ARCHLY VOLCY', role: 'Full Stack Developer', link:'https://www.linkedin.com/in/archly-volcy-83b740187/' },
+    { name: 'JESSICA SIRUNO ', role: 'Diseñadora UX/UI', link:'https://www.linkedin.com/in/jessica-siruno/' },
+    { name: 'GISELA CARBALLO', role: 'Front-end Developer', link: 'https://www.linkedin.com/in/giselacarballourquidi/',},
   ];
 
   const images = {
-    aspacia: { src: '/src/img/aspasia.png', link: 'https://grupoaspasia.com' },
+    aspasia: { src: '/src/img/aspasia.png', link: 'https://grupoaspasia.com' },
     appsFactory: { src: '/src/img/apps_factory.png', link: 'https://appsfactory.cat/' },
-    // team: { src: 'https://planeo.vercel.app/assets/team-Bbb1gi90.svg'},
   };
 
   return (
@@ -27,7 +27,7 @@ const About = () => {
           <h2>¿Quiénes somos?</h2>
           <p>
             Somos un grupo de jóvenes talentos formados en diseño, programación y marketing digital,
-            gracias al programa totalmente subvencionado <strong>Apps Factory</strong>.
+            gracias al programa totalmente subvencionado <span className='strong'>Apps Factory</span>.
           </p>
           <p>
             El objetivo del programa es formar a jóvenes menores de 30 años y facilitar su inserción laboral en el sector mobile.
@@ -35,10 +35,10 @@ const About = () => {
           </p>
         </div>
         <div className="about-image">
-          <a href={images.aspacia.link} target="_blank" rel="noopener noreferrer" >
-            <img src={images.aspacia.src} alt="Aspasia" style={{width:'500px', padding:'40px'}} />
+          <a href={images.aspasia.link} target="_blank"  >
+            <img src={images.aspasia.src} alt="Aspasia" style={{width:'350px', padding:'40px'}} />
           </a>
-          <a href={images.appsFactory.link} target="_blank" rel="noopener noreferrer">
+          <a href={images.appsFactory.link} target="_blank">
             <img src={images.appsFactory.src} alt="Apps Factory" />
           </a>
         </div>
@@ -48,10 +48,8 @@ const About = () => {
       <section className="about-section reverse">
         <div className="about-text">
           <h2>Origen de la aplicación</h2>
-          <p>
-            Esta app fue diseñada para facilitar la votación de los grupos y mentores que participan en la presentación
-            final del programa <strong>Apps Factory</strong>. La idea surgió como parte de un ejercicio práctico en el que
-            los propios alumnos desarrolladores, junto con una compañera de diseño, crearon esta solución.
+          <p >
+            Esta app fue diseñada para facilitar la votación de los grupos y mentores que participan en la presentación final del programa <span className='strong'>Apps Factory</span>. La idea surgió por iniciativa de los orientadores y del profesorado, como parte de un ejercicio práctico que los propios alumnos desarrolladores, junto con una compañera de diseño, llevaron a cabo para crear esta solución.
           </p>
         </div>
       </section>
@@ -92,15 +90,33 @@ const About = () => {
             La aplicación fue creada por los propios alumnos del programa, combinando desarrollo y diseño para ofrecer una herramienta funcional y visualmente atractiva.
           </p>
           <div className="team-cards">
-            {team.map(({ name, role,}, i) => (
+            {team.map(({ name, role,link}, i) => (
               <div className="team-card" key={i}>
-                {/* <img src={photo} alt={`${name} foto`} /> */}
-                <h3>{name}</h3>
-                <p>{role}</p>
+                {link ? (
+                    <a href={link} target='_blank' className='link-card'>
+                      <h3>{name}</h3>
+                      <p>{role}</p>
+                    </a>
+                ):(
+                  <>  
+                    <h3>{name}</h3>
+                    <p>{role}</p>
+                  </>
+                )}  
               </div>
             ))}
           </div>
         </div>
+      </section>
+
+      <section className='about-section'>
+        <div className='about-text full-width'>
+            <h2>Agradecimientos</h2>
+            <p>Queremos expresar nuestro más sincero agradecimiento a <span className='strong'>Apps Factory</span> y <span className='strong'>Aspasia</span> por brindarnos la oportunidad de participar en este bootcamp. Este programa no solo nos permitió adquirir conocimientos técnicos, sino también desarrollar habilidades clave como el trabajo en equipo, la resolución de problemas y la gestión de proyectos, fundamentales para la creación de esta aplicación de votación.</p>
+
+            <p>También extendemos nuestra gratitud al profesor <span className='strong'><a href="https://pablomonteserin.com/" target="_blank">Pablo Monteserin</a></span>, por su dedicación, acompañamiento y enseñanza a lo largo del curso, así como a los orientadores <span className='strong'>Txabi López Anastasio</span>, <span className='strong'>Julia Mata</span> y <span className='strong'>Lorena Ruiz</span>, por su constante apoyo, orientación y confianza en nuestro crecimiento profesional.</p>
+        </div>
+
       </section>
     </div>
   );

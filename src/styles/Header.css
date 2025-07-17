@@ -1,4 +1,4 @@
-/* Estilos generales del header */
+/*Estilos generales del header*/
 .header {
   background-color: #333;
   color: white;
@@ -51,7 +51,8 @@
 }
 
 .nav-link:hover {
-  color: #0056b3;
+  color: #f8b113;
+  text-decoration: none;
 }
 
 /* Menú móvil (por defecto oculto) */
@@ -59,10 +60,32 @@
   display: none;
 }
 
+.mobile-nav{
+  display:none;
+}
+.mobile-nav.active {
+  max-height: 300px;
+}
+
+.mobile-nav a{
+  color: white;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.mobile-nav a:hover {
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+}
+
 /* Estilos para el menú de navegación en dispositivos móviles */
 @media (max-width: 768px) {
   .nav {
-    display: none;
+    display: none !important;
     /* Escondemos la barra de navegación normal */
   }
 
@@ -89,6 +112,7 @@
   }
 
   .mobile-nav {
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
@@ -112,6 +136,8 @@
   }
 
   .mobile-nav a:hover {
-    background-color: #4CAF50;
+    background-color: #f8b113;
   }
 }
+
+
